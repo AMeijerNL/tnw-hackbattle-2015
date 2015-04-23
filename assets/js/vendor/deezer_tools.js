@@ -65,6 +65,8 @@ function createPlaylist(title, playlist) {
                     access_token: userToken
                 }, 
                 function (response) {
+
+                    window.location = 'http://deezer.com/playlist/'+playlistId;
                     console.log(response);
                 }
             );
