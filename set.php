@@ -76,7 +76,7 @@ include_once "header.php";
                         <span class="setlist__item__index">#</span>
                         <span class="setlist__item__title">Song title</span>
                     </div>
-                    <ol class="setlist__list">
+                    <ol class="setlist__list js-setlist" data-artist="<?= $setlist['artist']['@name'] ?>">
         <?php
 
         $i = 0;
@@ -98,7 +98,7 @@ include_once "header.php";
 
             ?>
                 
-                <li class="setlist__item">
+                <li class="setlist__item" data-title="<?= $song['@name'] ?>">
                     <span class="setlist__item__title">
                         <?= $song['@name'] ?>
                         <!-- <i class="setlist__item__artist">Mr. Blake</i> -->
