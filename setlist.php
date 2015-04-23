@@ -53,7 +53,7 @@
                     <a class="results__link <?php if(!$hasTracklist){ echo 'results__link--nolink'; } ?>" href="set.php?id=<?= $setlist['@id'] ?>#set">
                         <img src="<?= $img ?>" class="result__img" alt="<?= $setlist['artist']['@name'] ?>">
                         <div class="result__wrap">
-                            <h2 class="result__title"><?= $setlist['artist']['@name'] ?>, <?= $setlist['venue']['@name'] ?>, <?php if( isset($setlist['@tour'])) { echo $setlist['@tour']; } ?></h2>
+                            <h2 class="result__title"><?= $setlist['artist']['@name'] ?>, <?= $setlist['venue']['@name'] ?><?php if( isset($setlist['@tour'])) { echo ', '.$setlist['@tour']; } ?></h2>
                             <div class="results__meta">
                                 <span class="results__meta__item">
                                     <i class="fa fa-user"></i>
