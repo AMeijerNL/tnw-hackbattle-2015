@@ -76,7 +76,7 @@ include_once "header.php";
                         <span class="setlist__item__index">#</span>
                         <span class="setlist__item__title">Song title</span>
                     </div>
-                    <ol class="setlist__list js-setlist" data-artist="<?= $setlist['artist']['@name'] ?>">
+                    <ol class="setlist__list js-setlist" data-artist="<?= $setlist['artist']['@name'] ?>" data-venue="<?= $setlist['venue']['city']['country']['@name'] ?>" data-date="<?= $setlist['@eventDate'] ?>">
         <?php
 
         $i = 0;
@@ -141,7 +141,7 @@ include_once "header.php";
 
 
 <div class="deezer">
-    <a href="http://www.deezer.com/playlist/1213711741" style="text-decoration: none;">
+    <a href="http://www.deezer.com/playlist/1213711741" class="js-createPlaylist" style="text-decoration: none;">
         <button class="deezer__btn">Create Deezer Playlist</button>
     </a>
 </div>  

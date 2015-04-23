@@ -1,3 +1,5 @@
+<input type="button" onclick="login();" value="Login" />
+
         <footer class="footer">
             Carefully crafted by Jenny, Sil and Alex
         </footer>
@@ -7,7 +9,7 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="https://cdns-files.deezer.com/js/min/dz.js"></script>
+        <script type="text/javascript" src="http://cdn-files.deezer.com/js/min/dz.js"></script>
         <script src="assets/js/vendor/deezer_tools.js"></script>
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>

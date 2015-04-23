@@ -1,11 +1,13 @@
 var userToken;
+var userID;
 
 function login() {
     DZ.login(function (response) {
         if (response.authResponse) {
-            console.log('Welcome!  Fetching your information.... ');
+            //console.log('Welcome!  Fetching your information.... ');
             DZ.api('/user/me', function (response) {
                 console.log('Good to see you, ' + response.name + '.');
+                userID = response.id;
             });
             userToken = response.authResponse.accessToken;
         } else {
@@ -44,6 +46,31 @@ function getAlbumCover(albumId) {
         var bckgd = response.cover + '&size=small';
         $('#preview').attr('src', bckgd);
     });
+}
+
+function createPlaylist(title, playlist) {
+    //add an album to my favorites
+    DZ.api('/user/me/playlists', 'POST',
+        {
+            title : title,
+            access_token: userToken
+        }, 
+        function (response) {
+            playlistId = response.id;
+            tracks = playlist.join();
+
+            DZ.api('playlist/'+playlistId+'/tracks', 'POST',
+                {
+                    songs : tracks,
+                    access_token: userToken
+                }, 
+                function (response) {
+                    console.log(response);
+                }
+            );
+
+        }
+    );
 }
 
 function favoriteAlbum(albumId) {

@@ -1,9 +1,12 @@
+var playlist = [],
+    artist = '',
+    venue = '',
+    date = '';
+
 $(function() {
 
-    var userToken;
-    var playlist = {};
-
     init();
+    deezer();
 
     function init(){
       var $form = $(".js-search"); 
@@ -22,7 +25,6 @@ $(function() {
         playAlbum( $(this).data('albumid') );
       });
 
-      deezer();
       checkSetlist();
       bindPlay();
     };
@@ -38,7 +40,9 @@ $(function() {
 
     function checkSetlist(){
       if( $('#set').length > 0 ){
-        var artist = $('.js-setlist').data('artist');
+        artist = $('.js-setlist').data('artist');
+        venue = $('.js-setlist').data('venue');
+        date = $('.js-setlist').data('date');
 
         $('.js-setlist li').each( function(){
           var $self = $(this);
@@ -50,15 +54,22 @@ $(function() {
           });
         })
       }
+
+      bindPlaylistCreation();
     };
 
     function insertDeezerTrack(deezerObj, $context){
       $context.append('<span class="setlist__item__preview js-play" data-track="'+deezerObj['id']+'">preview</span>');
+      playlist.push(deezerObj['id']);
     };
 
-    function blop(){
-
-    }
+    function bindPlaylistCreation(){
+      $('body').on('click', '.js-createPlaylist', function(ev){
+        ev.preventDefault();
+        var playlistName = artist + ' @ ' + venue + ' on ' + date;
+        createPlaylist(playlistName, playlist);
+      });
+    };
 
     function searchSetlist($form){
         $('#results').html('<div class="spinner"><img src="assets/img/spinner.gif"></div>');
@@ -72,24 +83,22 @@ $(function() {
           url: $form.attr('action'),
           data: formData,
           success: function(data){
-            console.log(data);
+            //console.log(data);
             $('#results').html(data);
           }
         });
     };
 
     function deezer(){
-
-      DZ.init({
-          appId: '156061',
-          channelUrl: 'http://tnw.ameijer.nl/channel.html',
-          player: {
-              onload: function () { 
-                  DZ.player.playAlbum(2962681, false);
-              }
-          }
-      });
-
+        DZ.init({
+            appId: '156061',
+            channelUrl: 'http://tnw.ameijer.nl/channel.html',
+            player: {
+                onload: function () { 
+                    DZ.player.playAlbum(2962681, false);
+                }
+            }
+        });
     };
 
     function playAlbum(id){
@@ -98,7 +107,7 @@ $(function() {
                 DZ.player.playAlbum(id, true);
                 DZ.player.play();
             } else {
-                login()
+                login();
             }
         });
     };
