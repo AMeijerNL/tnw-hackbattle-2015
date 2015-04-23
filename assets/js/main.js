@@ -7,6 +7,8 @@ $(function() {
       $(".js-search").on( "submit", function( ev ) {
         ev.preventDefault();
 
+        $('#results').html('<div class="spinner"><img src="assets/img/spinner.gif"></div>');
+
         var formData = {
             'search': $('#search').val()
         };
