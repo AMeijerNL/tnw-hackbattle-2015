@@ -1,5 +1,3 @@
-<input type="button" onclick="login();" value="Login" />
-
         <footer class="footer">
             Carefully crafted by Jenny, Sil and Alex
         </footer>

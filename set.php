@@ -138,10 +138,8 @@ include_once "header.php";
 
 </section>
 
-
-
 <div class="deezer">
-    <a href="http://www.deezer.com/playlist/1213711741" class="js-createPlaylist" style="text-decoration: none;">
+    <a href="#" onclick="loginAndCreate();" class="js-createPlaylist" style="text-decoration: none;">
         <button class="deezer__btn">Create Deezer Playlist</button>
     </a>
 </div>  
