@@ -796,6 +796,11 @@ body {
 }
 /* line 18, ../../scss/sass/_header.scss */
 .header__title {
+  width: 120px;
+  height: 30px;
+  text-indent: -9000em;
+  background: url(../img/deelistlogo.png) top left no-repeat;
+  background-size: cover;
   color: white;
 }
 
