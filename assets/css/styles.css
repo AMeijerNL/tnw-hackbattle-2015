@@ -782,6 +782,10 @@ body {
   }
 }
 /* line 5, ../../scss/sass/_header.scss */
+.header--small {
+  background: #3899b9;
+}
+/* line 9, ../../scss/sass/_header.scss */
 .header__logo {
   position: absolute;
   top: 0;
@@ -790,7 +794,7 @@ body {
   height: 2em;
   background: #E74C3C;
 }
-/* line 14, ../../scss/sass/_header.scss */
+/* line 18, ../../scss/sass/_header.scss */
 .header__title {
   color: white;
 }
@@ -1112,8 +1116,9 @@ body {
   border-left: 0;
   border-right: 0;
   border-bottom: 1px solid #cccccc;
+  height: 140px;
 }
-/* line 38, ../../scss/sass/_result.scss */
+/* line 39, ../../scss/sass/_result.scss */
 .result__wrapper {
   *zoom: 1;
   position: relative;
@@ -1129,18 +1134,18 @@ body {
 .result__wrapper:after {
   clear: both;
 }
-/* line 45, ../../scss/sass/_result.scss */
+/* line 46, ../../scss/sass/_result.scss */
 .result__wrap {
   margin-left: 140px;
   text-align: left;
 }
-/* line 50, ../../scss/sass/_result.scss */
+/* line 51, ../../scss/sass/_result.scss */
 .result__img {
   position: absolute;
   left: 1em;
   top: 1em;
 }
-/* line 56, ../../scss/sass/_result.scss */
+/* line 57, ../../scss/sass/_result.scss */
 .result__title {
   display: block;
   font-size: 0.88889em;
@@ -1148,7 +1153,7 @@ body {
   margin-bottom: .5em;
   color: #3899b9;
 }
-/* line 64, ../../scss/sass/_result.scss */
+/* line 65, ../../scss/sass/_result.scss */
 .result__description {
   display: block;
   color: #999999;

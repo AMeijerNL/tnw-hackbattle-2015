@@ -20,10 +20,10 @@
 
             <section class="content">
                 
-                <form class="search" action="">
+                <form class="search js-search" action="setlist.php" method="POST" >
                     <label class="search__label" for="search">Create playlists from concert sets</label>
                     <div class="search__wrap">
-                        <input id="search" class="search__input" type="search" placeholder="Search for an artist..." />
+                        <input id="search" class="search__input" name="search" type="search" placeholder="Search for an artist..." />
                         <input id="submit" class="search__submit fa-search" type="submit" value="" />
                         <label for="submit" class="search__icon fa fa-search"></i>
                     </div>
@@ -31,6 +31,8 @@
 
             </section>
         </div>
+
+        <section id="results" class="results"></section>
 
         <section class="popular">
             <h1 class="popular__title">Popular playlists this week</h1>
@@ -55,118 +57,6 @@
                     <div class="popular__item__caption">
                         <span class="popular__item__title">Rihanna</span>
                         <span class="popular__item__subtitle">Splendid Tour, Chicago</span>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section class="results">
-            <div class="results__titlewrap">
-                <h1 class="results__title">Search results for 'Justin Bieber'</h1>
-                <a href="#search" class="results__search">Search again</a>    
-            </div>
-            
-            <ul class="results__list">
-                <li class="result">
-                    <a class="results__link" href="#">
-                        <img src="assets/img/bieber1.png" class="result__img" alt="">
-                        <div class="result__wrap">
-                            <h2 class="result__title">Justin Bieber, Perth, Believe Tour</h2>
-                            <div class="results__meta">
-                                <span class="results__meta__item">
-                                    <i class="fa fa-user"></i>
-                                    Justin Bieber
-                                </span>
-                                <span class="results__meta__item">
-                                    <i class="fa fa-calendar"></i>
-                                    Apr 1, 2015
-                                </span>
-                                <span class="results__meta__item">
-                                    <i class="fa fa-music"></i>
-                                    Believe Tour
-                                </span>
-                                <span class="results__meta__item">
-                                    <i class="fa fa-map-marker"></i>
-                                    Toronto, Canada
-                                </span>
-                            </div>
-                            <p class="result__description">
-                                Tracklist: content here...
-                            </p>
-                        </div>
-                    </a>
-                </li>
-                <li class="result">
-                    <a class="results__link" href="#">
-                        <img src="assets/img/bieber2.png" class="result__img" alt="">
-                        <div class="result__wrap">
-                            <h2 class="result__title">Justin Bieber, Adelaide, Believe Tour</h2>
-                            <div class="results__meta">
-                                <span class="results__meta__item">
-                                    <i class="fa fa-user"></i>
-                                    Justin Bieber
-                                </span>
-                                <span class="results__meta__item">
-                                    <i class="fa fa-calendar"></i>
-                                    Apr 1, 2015
-                                </span>
-                                <span class="results__meta__item">
-                                    <i class="fa fa-music"></i>
-                                    Believe Tour
-                                </span>
-                                <span class="results__meta__item">
-                                    <i class="fa fa-map-marker"></i>
-                                    Toronto, Canada
-                                </span>
-                            </div>
-                            <p class="result__description">
-                                Tracklist: content here...
-                            </p>
-                        </div>
-                    </a>
-                </li>
-                <li class="result">
-                    <a class="results__link" href="#">
-                        <img src="assets/img/bieber1.png" class="result__img" alt="">
-                        <div class="result__wrap">
-                            <h2 class="result__title">Item 1</h2>
-                            <div class="results__meta">
-                                <span class="results__meta__item">
-                                    <i class="fa fa-user"></i>
-                                    Justin Bieber
-                                </span>
-                                <span class="results__meta__item">
-                                    <i class="fa fa-calendar"></i>
-                                    Apr 1, 2015
-                                </span>
-                                <span class="results__meta__item">
-                                    <i class="fa fa-music"></i>
-                                    Believe Tour
-                                </span>
-                                <span class="results__meta__item">
-                                    <i class="fa fa-map-marker"></i>
-                                    Toronto, Canada
-                                </span>
-                            </div>
-                            <p class="result__description">
-                                Tracklist: content here...
-                            </p>
-                        </div>
-                    </a>
-                </li>
-                <li class="result">
-                    <img src="assets/img/bieber2.png" class="result__img" alt="">
-                    <div class="result__wrap">
-                        <h2 class="result__title">Item 2</h2>
-                        <div class="results__meta">
-                            <span class="results__meta__item"></span>
-                            <span class="results__meta__item"></span>
-                            <span class="results__meta__item"></span>
-                            <span class="results__meta__item"></span>
-                        </div>
-                        <p class="result__description">
-                            Tracklist: content here...
-                        </p>
                     </div>
                 </li>
             </ul>
