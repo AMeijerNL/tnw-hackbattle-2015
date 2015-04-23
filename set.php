@@ -141,7 +141,9 @@ include_once "header.php";
 
 
 <div class="deezer">
-    <button class="deezer__btn">Create Deezer Playlist</button>
+    <a href="http://www.deezer.com/playlist/1213711741" style="text-decoration: none;">
+        <button class="deezer__btn">Create Deezer Playlist</button>
+    </a>
 </div>  
 
 <?php
