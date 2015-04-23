@@ -44,10 +44,13 @@
         }
 
         foreach( $data['setlists']['setlist'] as $setlist ) {
+
+            $hasTracklist = isset($setlist['sets']['set']['song']);
+
             ?>
 
                 <li class="result">
-                    <a class="results__link" href="set.php?id=<?= $setlist['@id'] ?>#set">
+                    <a class="results__link <?php if(!$hasTracklist){ echo 'results__link--nolink'; } ?>" href="set.php?id=<?= $setlist['@id'] ?>#set">
                         <img src="<?= $img ?>" class="result__img" alt="<?= $setlist['artist']['@name'] ?>">
                         <div class="result__wrap">
                             <h2 class="result__title"><?= $setlist['artist']['@name'] ?>, <?= $setlist['venue']['@name'] ?>, <?php if( isset($setlist['@tour'])) { echo $setlist['@tour']; } ?></h2>
@@ -72,7 +75,28 @@
                                 </span>
                             </div>
                             <p class="result__description">
-                                Tracklist: content here...
+                                Tracklist:
+                                <?php 
+                                    if( $hasTracklist ){
+                                        $j = 0;
+                                        foreach ($setlist['sets']['set']['song'] as $song) {
+                                            if($j > 2){
+                                                echo " and more...";    
+                                                break;
+                                            }else {
+                                                if(isset($song['@name'])){
+                                                    echo $song['@name']. ', ';    
+                                                }else {
+                                                    echo 'Song, ';
+                                                }
+                                                
+                                            }
+                                            $j++;
+                                        }
+                                    }else {
+                                        echo "- no tracklist available -";
+                                    }
+                                ?>
                             </p>
                         </div>
                     </a>
