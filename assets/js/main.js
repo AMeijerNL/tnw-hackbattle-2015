@@ -55,31 +55,13 @@ $(function() {
         })
       }
 
-      bindPlaylistCreation();
+      //bindPlaylistCreation();
     };
 
     function insertDeezerTrack(deezerObj, $context){
       $context.append('<span class="setlist__item__preview js-play" data-track="'+deezerObj['id']+'">preview</span>');
       playlist.push(deezerObj['id']);
     };
-
-    function loginAndCreate(){
-      DZ.login(function (response) {
-          if (response.authResponse) {
-              //console.log('Welcome!  Fetching your information.... ');
-              DZ.api('/user/me', function (response) {
-                  //console.log('Good to see you, ' + response.name + '.');
-                  userID = response.id;
-
-                  var playlistName = artist + ' @ ' + venue + ' on ' + date;
-                  createPlaylist(playlistName, playlist);
-              });
-              userToken = response.authResponse.accessToken;
-          } else {
-              //console.log('User cancelled login or did not fully authorize.');
-          }
-      }, { perms: 'email, manage_library' });
-    }
 
     function searchSetlist($form){
         $('#results').html('<div class="spinner"><img src="assets/img/spinner.gif"></div>');
@@ -126,3 +108,21 @@ $(function() {
     // maroon5 8470649
     // rihanna 10017266
 });
+
+function loginAndCreate(){
+  DZ.login(function (response) {
+      if (response.authResponse) {
+          //console.log('Welcome!  Fetching your information.... ');
+          DZ.api('/user/me', function (response) {
+              //console.log('Good to see you, ' + response.name + '.');
+              userID = response.id;
+
+              var playlistName = artist + ' @ ' + venue + ' on ' + date;
+              createPlaylist(playlistName, playlist);
+          });
+          userToken = response.authResponse.accessToken;
+      } else {
+          //console.log('User cancelled login or did not fully authorize.');
+      }
+  }, { perms: 'email, manage_library' });
+};
