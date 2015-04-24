@@ -1086,7 +1086,7 @@ body {
 /* line 136, ../../scss/sass/_results.scss */
 .results__meta__item {
   display: inline-block;
-  min-width: 11.11111em;
+  padding-right: 2em;
 }
 
 /* line 1, ../../scss/sass/_result.scss */

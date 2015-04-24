@@ -34,6 +34,13 @@ include_once "header.php";
             case 'hardwell':
                 $img = 'assets/img/hardwell1.png';
                 break;
+            case 'lady gaga':
+            case 'tony bennett & lady gaga':
+                $img = 'assets/img/gaga.png';
+                break;
+            case 'backstreet boys':
+                $img = 'assets/img/backstreet.png';
+                break;
             
             default:
                 $img = 'assets/img/placeholder.png';
