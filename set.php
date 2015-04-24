@@ -124,6 +124,13 @@ include_once "header.php";
         ?>
                     </ol>
                 </div>
+
+                <div class="deezer">
+                    <a href="#" onclick="loginAndCreate();" class="js-createPlaylist" style="text-decoration: none;">
+                        <button class="deezer__btn">Create Deezer Playlist</button>
+                    </a>
+                </div> 
+
             </div>
         <?php 
         
@@ -136,13 +143,7 @@ include_once "header.php";
     }
 ?>
 
-</section>
-
-<div class="deezer">
-    <a href="#" onclick="loginAndCreate();" class="js-createPlaylist" style="text-decoration: none;">
-        <button class="deezer__btn">Create Deezer Playlist</button>
-    </a>
-</div>  
+</section> 
 
 <?php
 include_once "footer.php";

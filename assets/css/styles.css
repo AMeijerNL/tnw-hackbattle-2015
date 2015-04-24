@@ -1445,16 +1445,12 @@ body {
 
 /* line 1, ../../scss/sass/_deezer.scss */
 .deezer {
-  z-index: 5;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  background: rgba(34, 34, 34, 0.2);
+  position: absolute;
+  top: 1em;
+  left: 600px;
   padding: 1em 2em;
 }
-/* line 11, ../../scss/sass/_deezer.scss */
+/* line 7, ../../scss/sass/_deezer.scss */
 .deezer__btn {
   margin: 0;
   padding: .5em 1em;
@@ -1465,7 +1461,7 @@ body {
   border-radius: 5px;
   transition: .3s ease;
 }
-/* line 21, ../../scss/sass/_deezer.scss */
+/* line 17, ../../scss/sass/_deezer.scss */
 .deezer__btn:hover {
   transform: translate(0, 3px);
 }
