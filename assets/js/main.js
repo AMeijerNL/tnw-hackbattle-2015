@@ -36,6 +36,12 @@ $(function() {
         var tracks = [id];
         DZ.player.playTracks(tracks, true);
       })
+
+      $('body').keypress(function(ev){
+        if ( event.which == 115 && DZ.player.isPlaying() ) {
+           DZ.player.pause();
+        }
+      })
     }
 
     function checkSetlist(){
